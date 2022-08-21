@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<!-- 改编版 -->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>干翻梧桐起始页(分支)</title>
+		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<body>
+
+<img class="bg-img" src="https://api.dujin.org/bing/1920.php">
+
+
+<div class="top-div">
+	<div class="time-div" id="time-btn">
+		<p class="time" id="time">9:41</p>
+		<div class="time-pro-bg"><div id="time-pro" class="time-pro"></div></div>
+		<p id="weather-mini">晴天 25° 60% 空气 23</p>
+	</div>
+	<div class="sbar">
+		<div class="sbar-div">
+			<button class="sbar-sel" id="select-btn"></button>
+			<input type="text" class="sbar-input" id="sbar-input" placeholder="搜索网页">
+			<button id="sbar-btn" class="sbar-btn">搜索</button>
+		</div>
+		<div id="sbar-sel-drop-down" class="sbar-sel-drop-down drop-down hidden">
+			<ul>
+				<!-- js填充 -->
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- 一言 -->
+<div id="hitoko-bar" class="hitoko-bar hidden">
+	<a>「 </a> <a id="hitoko-content">你我最遥远的距离莫过于断网。</a> <a> 」</a><br>
+	<a id="hitoko-author">Hi-UI</a>
+</div>
+
+<!-- 底部栏 -->
+<div class="bottom-bar">
+	<a>FireWutong!</a>
+	in 2022 by 
+	<a href="https://space.bilibili.com/621455674">Hi-UI</a>
+	 | <a id="model-btn" model-open="model-update">v1.2</a> | 
+	 <a href="https://wutongsp{$rthSuffix}/">梧桐</a>
+</div>
+
+<!-- 更新日志模态框 -->
+<div id="model-update" class="model-bg hidden">
+	<div class="model">
+		<h1>更新日志</h1>
+		<span class="model-close" id="model-close" role="button" tabindex="0" title="关闭">
+			<span class="model-close-inner"></span>
+		</span>
+		<div class="scroll" id="update-scroll">
+			<!-- js填充 -->
+		</div>
+	</div>
+</div>
+
+
+<!-- 设置模态框 -->
+
+<script src="./js/index.js"></script>
+<script src="./js/update.js"></script>
+</body></html>
