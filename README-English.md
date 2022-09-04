@@ -1,4 +1,4 @@
-[简体中文](https://github.com/firedevel/FireStartPage/README.md)|English
+[简体中文](https://github.com/firedevel/FireStartPage/blob/main/README.md) | English
 
 ------
 
