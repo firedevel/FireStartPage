@@ -4,6 +4,7 @@
 
 # FireStartPage
 Todo: be better than WttongStartPage
+GithubPages: `firedevel.github.io`
 
 ## Any question?
 If you think this project can be well or the code like a shit, Issues & PR Welcome!
