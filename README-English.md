@@ -1,3 +1,5 @@
+[简体中文](https://github.com/firedevel/FireStartPage/README.md)|English
+------
 # FireStartPage
 Todo: be better than WttongStartPage
 
