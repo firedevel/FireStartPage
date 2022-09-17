@@ -8,6 +8,7 @@ function setHidden(e,bool){
         	e.addClass("hidden");
         });
 	}else{
+		e.css("opacity","0");
 		e.removeClass("hidden");
 		e.animate({opacity:'1'}, 200);
 	}
@@ -18,8 +19,14 @@ function setHidden(e,bool){
 //引擎字典
 var engineList = {
 	"Bing":"https://cn.bing.com/search?q=",
-	"百度":"https://www.baidu.com/s?wd=",
-	"Github":"https://github.com/search?q="
+	"百度":"https://www.baidu.com/s?wd="
+}
+
+if(localStorage.getItem('engineList') == null){
+	localStorage.setItem('engineList',JSON.stringify(engineList));
+	engineList = JSON.parse(localStorage.getItem('engineList'));
+}else{
+	engineList = JSON.parse(localStorage.getItem('engineList'));
 }
 
 
@@ -92,6 +99,7 @@ $("#sbar-input").on("focus", function() {
 		$("#hitoko-content").text(data.hitokoto);
 		$("#hitoko-author").text("--" + data.from);
 		setHidden($("#hitoko-bar"),false);
+		setHidden($("#link-bar"),true);
 	}); //刷新一言
 	
 });
@@ -99,6 +107,7 @@ $("#sbar-input").on("focus", function() {
 $("#sbar-input").on("blur", function() {
 	deepEffect(false);
 	setHidden($("#hitoko-bar"),true);
+	setHidden($("#link-bar"),false);
 });
 
 function deepEffect(use){
