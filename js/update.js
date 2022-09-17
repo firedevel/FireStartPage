@@ -88,6 +88,10 @@ $("#link-input-link").keypress(function(event){
 				localStorage.setItem('link',JSON.stringify(link));
 				link = JSON.parse(localStorage.getItem('link'));
 			linkShow(link,$("#link-bar"));
+			$("#link-input-btn").click(function(){
+				setHidden($("#link-input-btn"),true);
+				setHidden($("#link-input"),false);
+			});
 		}
 		setHidden($("#link-input-btn"),false);
 		setHidden($("#link-input"),true);
