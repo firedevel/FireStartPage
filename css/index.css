@@ -15,9 +15,8 @@ body{
     width: 100%;
     margin: 0;
     padding: 0;
-	font-family:  Helvetica;
-
-	-webkit-tap-highlight-color: transparent;
+    font-family: SimHei;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select:none;
@@ -460,6 +459,9 @@ html *{
 }
 .link-bar div:hover{
 	background-color: rgba(255, 255, 255, 0.5);
+}
+.link-bar div:active{
+	transform: scale(0.9);
 }
 .link-bar div h5{
 	color: #fff;
