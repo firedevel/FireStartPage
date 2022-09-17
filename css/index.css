@@ -469,7 +469,7 @@ html *{
 	font-size: 15px;
 }
 .link-bar div img{
-	max-width: 50px;
+	max-width: 32px;
 	border-radius: 5px;
 }
 .link-bar div input{
