@@ -99,25 +99,29 @@ $("#sbar-input").on("focus", function() {
 		$("#hitoko-content").text(data.hitokoto);
 		$("#hitoko-author").text("--" + data.from);
 		setHidden($("#hitoko-bar"),false);
-		setHidden($("#link-bar"),true);
+		$("#hitoko-bar").attr("uuid", data.uuid);
+		$("#hitoko-bar").click(function(){window.open("https://hitokoto.cn/?uuid=" + $("#hitoko-bar").attr("uuid"))})
 	}); //刷新一言
-	
 });
 
-$("#sbar-input").on("blur", function() {
-	deepEffect(false);
-	setHidden($("#hitoko-bar"),true);
-	setHidden($("#link-bar"),false);
-});
+
 
 function deepEffect(use){
 	if (use){
+		$(".blur-div").removeClass("hidden");
 		$(".bg-img").addClass("bg-deep");
 		$(".sbar").addClass("sbar-deep");
+		setHidden($("#link-bar"),true);
 	}else{
 		$(".bg-img").removeClass("bg-deep");
+		setHidden($("#link-bar"),false);
+		$(".blur-div").addClass("hidden");
 		$(".sbar").removeClass("sbar-deep");
 	}
+	$(".blur-div").click(function() {
+		deepEffect(false);
+		setHidden($("#hitoko-bar"),true);
+	});
 }
 
 //一言
@@ -158,6 +162,7 @@ function showTime() {
 	}
     var secondPro = (date.getSeconds() * 1.6)
     // 实时显示
+	$(".time-div").css("opacity","1");
 	$("#time").text(hour + ":" + minute);
 	$("#time-pro").css("width", secondPro + "%");
 }
