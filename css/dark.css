@@ -1,9 +1,9 @@
 @media (prefers-color-scheme: dark) { 
-	.bg-img{
+    .bg-img{
         filter: brightness(50%);
     }
     .bg-deep{
-        filter: brightness(50%) blur(5px);
+        filter: brightness(50%);
     }
     
     .time-div {
@@ -16,12 +16,7 @@
     }
     
     .sbar-div{
-    	display: flex;
-    	height: 50px;
-    	backdrop-filter: blur(20px);
-    	-webkit-backdrop-filter: blur(20px);
     	box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    	border-radius: 25px;
     }
     
     .sbar-sel {
@@ -34,7 +29,7 @@
     }
     
     .sbar-input {
-        color: #222;
+        color: #ccc;
         background: rgba(0,0,0,0.5);
     }
     .sbar-input:hover {
@@ -43,7 +38,9 @@
     .sbar-input:focus {
     	background-color: #111;
     }
-    
+    .sbar-input::placeholder{
+        color: #555;
+    }
     
     .sbar-btn {
         color: rgba(255,255,255,0.7);
@@ -74,5 +71,17 @@
         color: #eee;
         background-image: linear-gradient(352deg, #555, #777);
         border: solid 1px rgb(60, 60, 60);
+    }
+    .link-bar div{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .link-bar div:hover{
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    .link-bar div h5{
+        color: rgba(255,255,255,0.4);
+    }
+    .link-bar div svg *{
+        stroke:rgb(120, 120, 120)
     }
 }
