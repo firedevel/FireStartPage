@@ -464,7 +464,7 @@ html *{
 	z-index: 0;
 }
 .link-bar div{
-	border-radius: 5px;
+	border-radius: 2px;
 	padding: 10px;
 	text-align: center;
 	transition: 0.2s;
