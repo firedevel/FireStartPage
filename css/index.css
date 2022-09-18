@@ -1,3 +1,6 @@
+::-moz-selection { 
+	background: rgba(131, 205, 255, 0.3);
+}
 ::-webkit-selection { 
 	background: rgba(131, 205, 255, 0.3);
 }
@@ -511,4 +514,5 @@ html *{
 	transition: 0.5s;
 	position: fixed;
 	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 }
