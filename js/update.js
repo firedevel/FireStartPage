@@ -66,7 +66,7 @@ function linkShow(list,div){
 	}
 	$("#link-bar").append(
 	'<div class="hidden" id="link-input"><input id="link-input-name" placeholder="名称"><br><input id="link-input-keyword" placeholder="简称"><br><input id="link-input-link" placeholder="链接"><br></div>'+
-	'<div id="link-input-btn"><svg version="1.1"><line x1="20" y1="10" x2="20" y2="30" style="stroke:rgb(255, 255, 255);stroke-width:3"></line><line x1="10" y1="20" x2="30" y2="20" style="stroke:rgb(255, 255, 255);stroke-width:3"></line></svg></div>'
+	'<div id="link-input-btn"><svg version="1.1"><line x1="20" y1="10" x2="20" y2="30" style="stroke-width:3"></line><line x1="10" y1="20" x2="30" y2="20" style="stroke-width:3"></line></svg></div>'
 	);
 	$("#link-bar").children("#link").click(function(){
 		window.open($(this).attr('golink'))
@@ -75,32 +75,30 @@ function linkShow(list,div){
 
 linkShow(link,$("#link-bar"));
 
-
-$("#link-input-link").keypress(function(event){
-	if (event.keyCode == 13) {
-		if(!$("#link-input-link").val() == '' && !$("#link-input-keyword").val() == '' && !$("#link-input-name").val() == ''){
-			if ($("#link-input-link").val().substring(0,5) != "http://" || $("#link-input-link").val().substring(0,5) != "https://"){
-				cachelist = {"name":$("#link-input-name").val(),"keyword":$("#link-input-keyword").val(),"golink":"https://"+$("#link-input-link").val()};
-			}else{
-				cachelist = {"name":$("#link-input-name").val(),"keyword":$("#link-input-keyword").val(),"golink":$("#link-input-link").val()};
+function listenLink(){
+	$("#link-input-link").keypress(function(event){
+		if (event.keyCode == 13) {
+			if(!$("#link-input-link").val() == '' && !$("#link-input-keyword").val() == '' && !$("#link-input-name").val() == ''){
+				if ($("#link-input-link").val().substring(0,5) != "http://" || $("#link-input-link").val().substring(0,5) != "https://"){
+					cachelist = {"name":$("#link-input-name").val(),"keyword":$("#link-input-keyword").val(),"golink":"https://"+$("#link-input-link").val()};
+				}else{
+					cachelist = {"name":$("#link-input-name").val(),"keyword":$("#link-input-keyword").val(),"golink":$("#link-input-link").val()};
+				}
+				link.push(cachelist);
+					localStorage.setItem('link',JSON.stringify(link));
+					link = JSON.parse(localStorage.getItem('link'));
+				linkShow(link,$("#link-bar"));
+				listenLink();
 			}
-			link.push(cachelist);
-				localStorage.setItem('link',JSON.stringify(link));
-				link = JSON.parse(localStorage.getItem('link'));
-			linkShow(link,$("#link-bar"));
-			$("#link-input-btn").click(function(){
-				setHidden($("#link-input-btn"),true);
-				setHidden($("#link-input"),false);
-			});
+			setHidden($("#link-input-btn"),false);
+			setHidden($("#link-input"),true);
 		}
-		setHidden($("#link-input-btn"),false);
-		setHidden($("#link-input"),true);
-	}
-});
+	});
 
 
-$("#link-input-btn").click(function(){
-	setHidden($("#link-input-btn"),true);
-	setHidden($("#link-input"),false);
-});
-
+	$("#link-input-btn").click(function(){
+		setHidden($("#link-input-btn"),true);
+		setHidden($("#link-input"),false);
+	});
+}
+listenLink();
