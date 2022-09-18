@@ -45,7 +45,6 @@ html *{
 
 .bg-deep{
 	transform: scale(1.02);
-	filter: blur(5px);
 }
 
 
@@ -70,6 +69,7 @@ html *{
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
 	margin: 10px 0;
 	color: rgba(255,255,255,0.7);
+	opacity: 0;
 }
 
 
@@ -158,6 +158,7 @@ html *{
 	padding: 0 10px;
 	outline: none;
 	border-radius: 0;
+	font-size: 17px;
 }
 .sbar-input:hover {
 	background-color: rgba(255,255,255,0.8);
@@ -167,6 +168,7 @@ html *{
 }
 .sbar-input::placeholder{
 	color: #333;
+	font-size: 15px;
 }
 
 
@@ -293,10 +295,18 @@ html *{
 .hitoko-bar{
 	color: rgba(255,255,255,0.6);
 	position: fixed;
-	bottom: 10%;
+	bottom: 15%;
 	left: 50%;
 	transform: translateX(-50%);
 	transition: 0.2s;
+	padding: 10px;
+	border-radius: 10px;
+}
+.hitoko-bar:hover{
+	background-color: rgba(255, 255, 255, 0.1);
+}
+.hitoko-bar:active{
+	background-color: rgba(255, 255, 255, 0.5);
 }
 #hitoko-content{
 	text-decoration: none;
@@ -340,6 +350,7 @@ html *{
 	width: 100%;
 	background-color: rgba(0,0,0,0.5);
 	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 }
 
 .model{
@@ -447,6 +458,7 @@ html *{
 	top: 75%;
 	transform: translate(-50%,-50%);
 	width:fit-content;
+	z-index: 0;
 }
 .link-bar div{
 	border-radius: 5px;
@@ -470,6 +482,8 @@ html *{
 }
 .link-bar div img{
 	max-width: 32px;
+	width: 32px;
+	height: 32px;
 	border-radius: 5px;
 }
 .link-bar div input{
@@ -486,4 +500,15 @@ html *{
 	padding: 5px 0;
 	width: 40px;
 	height: 40px;
+}
+.link-bar div svg *{
+	stroke:rgb(200, 200, 200)
+}
+
+.blur-div{
+	width: 100%;
+	height: 100%;
+	transition: 0.5s;
+	position: fixed;
+	backdrop-filter: blur(5px);
 }
